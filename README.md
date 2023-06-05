@@ -36,30 +36,43 @@ You need a Google Account to log into the Google Cloud Console and enable the Go
 ## ChatGPT API
 You need an OpenAI Account and enable the ChatGPT API.
 
-## Set Environment Variables
-Set the following environment variables to use the system:
 
-- OPENAI_API_KEY
-  (e.g., export OPENAI_API_KEY=<YOUR OPENAI API KEY> in Unix-based systems)
 
-- GDRIVE_FOLDER_ID
-  (e.g., export GDRIVE_FOLDER_ID=<YOUR GDRIVE_FOLDER_ID> in Unix-based systems)
+# Procedure
+Considering that all the requirements are met, follow the steps below:
 
-## Install Python Requirements
+
+
+
+1. Clone the repository
+    ```
+    git clone https://github.com/robson-koji/ChatGPT-GDrive-Integration.git
+    ```
+
+2. Install Python Requirements
 You may need to install the necessary dependencies (Flask, OpenAI, etc.) using pip or any package manager you prefer before running the code.
 
 
 
-# Procedure
-Considering that all the requirements are met, there are only two steps to follow:
+3. Set Environment Variables
+Set the following environment variables to use the system:
+    ```
+    - OPENAI_API_KEY
+    (e.g., export OPENAI_API_KEY=<YOUR OPENAI API KEY> in Unix-based systems)
 
-1. Run the script below. It will download data from your Google Drive folder and load it into your local Chroma DB:
+    - GDRIVE_FOLDER_ID
+    (e.g., export GDRIVE_FOLDER_ID=<YOUR GDRIVE_FOLDER_ID> in Unix-based systems)
+    ```
+
+
+4. Run the script below. It will download data from your Google Drive folder and load it into your local Chroma DB:
 
     ```
-    python gdrive_copy/copy_gdrive.py
+    cd <PROJECT PATH>/gdrive_copy/
+    python copy_gdrive.py
     ```
 
-2. Run the Flask application and turn on the endpoint to start querying your data. 
+5. Run the Flask application and turn on the endpoint to start querying your data. 
 
     ```
     python app.py or flask run
